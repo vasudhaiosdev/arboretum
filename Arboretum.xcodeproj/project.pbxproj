@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E0979DD1C143B670058A6E3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0979DC1C143B670058A6E3 /* Photos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		3E0979DF1C15152C0058A6E3 /* deatilimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */; };
+		3E28E5651C142A9200146FFC /* UploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */; };
+		3E28E5851C142CFC00146FFC /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5841C142CFC00146FFC /* ViewPhoto.swift */; };
+		3E28E5871C142DC300146FFC /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */; };
+		3E2DE8491BF594D9000542D3 /* Browse_Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8451BF594D9000542D3 /* Browse_Photos.png */; };
+		3E2DE84A1BF594D9000542D3 /* Cancel_Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */; };
+		3E2DE84B1BF594D9000542D3 /* take_a_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8471BF594D9000542D3 /* take_a_photo.png */; };
+		3E2DE84C1BF594D9000542D3 /* Upload_Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8481BF594D9000542D3 /* Upload_Photo.png */; };
+		3E2DE8501BF59923000542D3 /* Photo_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE84F1BF59923000542D3 /* Photo_ViewController.swift */; };
+		3E2DE8601BF974F2000542D3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */; };
+		3E2DE8621BF97524000542D3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */; };
+		3E2E9BD81C13C959003F5314 /* SRWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E9BD71C13C958003F5314 /* SRWebClient.swift */; };
+		3E30108D1BCB588E00190434 /* customWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30108C1BCB588E00190434 /* customWindowInfo.swift */; };
+		3E30108F1BCB589A00190434 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E30108E1BCB589A00190434 /* InfoWindow.xib */; };
+		3E3010911BCB58B000190434 /* infowindow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010901BCB58B000190434 /* infowindow.png */; };
+		3E3010931BCB58CB00190434 /* watermarksmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010921BCB58CB00190434 /* watermarksmiley.jpg */; };
+		3E3010951BCB58D200190434 /* arrow-Forward Direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010941BCB58D200190434 /* arrow-Forward Direction.png */; };
+		3E3010971BCB58ED00190434 /* updated.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010961BCB58ED00190434 /* updated.png */; };
+		3E3010991BCB5A8700190434 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010981BCB5A8700190434 /* OpenGLES.framework */; };
+		3E30109B1BCB5AB300190434 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E30109A1BCB5AB300190434 /* QuartzCore.framework */; };
+		3E30109D1BCB5B1100190434 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E30109C1BCB5B1100190434 /* AVFoundation.framework */; };
+		3E30109F1BCB5B1A00190434 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E30109E1BCB5B1A00190434 /* CoreData.framework */; };
+		3E3010A11BCB5B4500190434 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010A01BCB5B4500190434 /* GLKit.framework */; };
+		3E3010A31BCB5B4E00190434 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010A21BCB5B4E00190434 /* CoreText.framework */; };
+		3E3010A51BCB5B5E00190434 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010A41BCB5B5E00190434 /* ImageIO.framework */; };
+		3E3010A71BCB5BA100190434 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010A61BCB5BA100190434 /* libicucore.tbd */; };
+		3E3010A91BCB5BAC00190434 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010A81BCB5BAC00190434 /* libc++.tbd */; };
+		3E3010AB1BCB5BB700190434 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010AA1BCB5BB700190434 /* libz.tbd */; };
+		3E3010AD1BCB5BD000190434 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010AC1BCB5BD000190434 /* SystemConfiguration.framework */; };
+		3E68C0471B5D79BD009D8429 /* Dontation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68C0461B5D79BD009D8429 /* Dontation.swift */; };
+		3E68C0491B5DAE89009D8429 /* missouriarboretumlogo1205px.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C0481B5DAE89009D8429 /* missouriarboretumlogo1205px.png */; };
+		3E68C04B1B5DB5EF009D8429 /* missouriarboretumlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */; };
+		3E68C04D1B5DCE94009D8429 /* arboretumlaunchericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */; };
+		3E68C0511B5DD21D009D8429 /* arboretumappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C0501B5DD21D009D8429 /* arboretumappicon.png */; };
+		3E8D04801B4ED58500165212 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D047F1B4ED58500165212 /* ContactUs.swift */; };
+		3E9239A11B4DDC7300BACBAA /* adoptatreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9239A01B4DDC7300BACBAA /* adoptatreeViewController.swift */; };
+		3E9C4B401B5FF18C00CA2FD4 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */; };
+		3E9C4B411B5FF18C00CA2FD4 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B371B5FF18C00CA2FD4 /* Icon-40@2x.png */; };
+		3E9C4B421B5FF18C00CA2FD4 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B381B5FF18C00CA2FD4 /* Icon-40@3x.png */; };
+		3E9C4B431B5FF18C00CA2FD4 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B391B5FF18C00CA2FD4 /* Icon-60@2x.png */; };
+		3E9C4B441B5FF18C00CA2FD4 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3A1B5FF18C00CA2FD4 /* Icon-60@3x.png */; };
+		3E9C4B451B5FF18C00CA2FD4 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3B1B5FF18C00CA2FD4 /* Icon-76.png */; };
+		3E9C4B461B5FF18C00CA2FD4 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3C1B5FF18C00CA2FD4 /* Icon-76@2x.png */; };
+		3E9C4B471B5FF18C00CA2FD4 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3D1B5FF18C00CA2FD4 /* Icon-Small.png */; };
+		3E9C4B481B5FF18C00CA2FD4 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3E1B5FF18C00CA2FD4 /* Icon-Small@2x.png */; };
+		3E9C4B491B5FF18C00CA2FD4 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B3F1B5FF18C00CA2FD4 /* Icon-Small@3x.png */; };
+		3EADFA0D1BCB48BD00749860 /* TrailsViewContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADFA0C1BCB48BD00749860 /* TrailsViewContrller.swift */; };
+		3EADFA0F1BCB4B7300749860 /* TrailsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EADFA0E1BCB4B7300749860 /* TrailsMapViewController.swift */; };
+		3EC7B9551B41F1B600DC9FE3 /* chatauquatrails.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */; };
+		3EC7B9571B41F1BE00DC9FE3 /* gaunttrail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */; };
+		3EC7B9591B41F1D000DC9FE3 /* shrubwalk.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */; };
+		3EC7B95B1B41F1D600DC9FE3 /* towertrail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */; };
+		3EC7B95D1B41FA4F00DC9FE3 /* DetailtreeinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7B95C1B41FA4E00DC9FE3 /* DetailtreeinfoViewController.swift */; };
+		3EC7B9611B42EAE300DC9FE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7B9601B42EAE300DC9FE3 /* MapKit.framework */; };
+		3EC7B9631B42EBDF00DC9FE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7B9621B42EBDF00DC9FE3 /* CoreLocation.framework */; };
+		3EC7B9651B431AF600DC9FE3 /* TreeviaquestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7B9641B431AF600DC9FE3 /* TreeviaquestionsViewController.swift */; };
+		3ED3E03B1B4CF09100CD2409 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED3E0391B4CF09100CD2409 /* ENSideMenu.swift */; };
+		3ED3E03C1B4CF09100CD2409 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED3E03A1B4CF09100CD2409 /* ENSideMenuNavigationController.swift */; };
+		3ED3E03E1B4CF28000CD2409 /* My Navigation controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED3E03D1B4CF28000CD2409 /* My Navigation controller.swift */; };
+		3ED3E0401B4CF3A400CD2409 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED3E03F1B4CF3A400CD2409 /* MyMenuTableViewController.swift */; };
+		3ED9E7AC1C04C8180041B196 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED9E7A91C04C8180041B196 /* 1.png */; };
+		3ED9E7AD1C04C8180041B196 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED9E7AA1C04C8180041B196 /* 2.png */; };
+		3ED9E7AE1C04C8180041B196 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED9E7AB1C04C8180041B196 /* 3.png */; };
+		3EED61651C17A15200D2AD5D /* CommemorativeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */; };
+		3EED61671C17AD4C00D2AD5D /* DonorMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */; };
+		3EEE2E891C0E375200F7DBF8 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEE2E881C0E375200F7DBF8 /* Reach.swift */; };
+		5303FA8C91CE81E15CD597E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1786EED20BACB6FADD014CA /* libPods.a */; };
+		8419CE5D1B54D2F00003487C /* ImageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419CE5C1B54D2F00003487C /* ImageScrollViewController.swift */; };
+		84372F381B3B37CC0040CD23 /* TreeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84372F371B3B37CC0040CD23 /* TreeInfoViewController.swift */; };
+		84B0FC711B3DD43700C3F1CA /* TreeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */; };
+		84C60F231B3F98FA00E06CD7 /* CommemorativeTreeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C60F221B3F98FA00E06CD7 /* CommemorativeTreeTable.swift */; };
+		84C60F251B3FA48E00E06CD7 /* DonorsTableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C60F241B3FA48E00E06CD7 /* DonorsTableList.swift */; };
+		84C60F291B3FACF700E06CD7 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C60F281B3FACF700E06CD7 /* Details.swift */; };
+		A10C2D521B39C94300E2F809 /* test_image_logo_converted.png in Resources */ = {isa = PBXBuildFile; fileRef = A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */; };
+		A10C2D561B39DBD800E2F809 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10C2D551B39DBD800E2F809 /* HomeViewController.swift */; };
+		A10C2D581B39E14000E2F809 /* supportthearboretum.png in Resources */ = {isa = PBXBuildFile; fileRef = A10C2D571B39E14000E2F809 /* supportthearboretum.png */; };
+		A10C2D5A1B39E16700E2F809 /* commemorative.png in Resources */ = {isa = PBXBuildFile; fileRef = A10C2D591B39E16700E2F809 /* commemorative.png */; };
+		A10C2D5C1B39E18000E2F809 /* donors.png in Resources */ = {isa = PBXBuildFile; fileRef = A10C2D5B1B39E18000E2F809 /* donors.png */; };
+		A10C2D5E1B39E19300E2F809 /* answer.png in Resources */ = {isa = PBXBuildFile; fileRef = A10C2D5D1B39E19300E2F809 /* answer.png */; };
+		A1343B791B38CB2600DA511F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1343B781B38CB2600DA511F /* AppDelegate.swift */; };
+		A1343B7E1B38CB2600DA511F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1343B7C1B38CB2600DA511F /* Main.storyboard */; };
+		A1343B801B38CB2600DA511F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1343B7F1B38CB2600DA511F /* Images.xcassets */; };
+		A1343B831B38CB2600DA511F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1343B811B38CB2600DA511F /* LaunchScreen.xib */; };
+		A1343B8F1B38CB2600DA511F /* IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1343B8E1B38CB2600DA511F /* IOSTests.swift */; };
+		A1343B991B38CBC200DA511F /* tanbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343B981B38CBC200DA511F /* tanbackground.png */; };
+		A1343B9B1B38CE7E00DA511F /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343B9A1B38CE7E00DA511F /* logo1.png */; };
+		A1343B9F1B38CECF00DA511F /* missouriarboretumlogo800px.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */; };
+		A1343BA31B38CF5900DA511F /* action_search.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BA21B38CF5900DA511F /* action_search.png */; };
+		A1343BA51B38CF5E00DA511F /* adoptatreehomescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */; };
+		A1343BA71B38CF8500DA511F /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BA61B38CF8500DA511F /* facebook.png */; };
+		A1343BA91B38CF9B00DA511F /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BA81B38CF9B00DA511F /* information.png */; };
+		A1343BAB1B38CFBA00DA511F /* photos.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BAA1B38CFBA00DA511F /* photos.png */; };
+		A1343BAD1B38CFC500DA511F /* trails.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BAC1B38CFC500DA511F /* trails.png */; };
+		A1343BAF1B38CFCB00DA511F /* tree_information.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BAE1B38CFCB00DA511F /* tree_information.png */; };
+		A1343BB11B38CFD200DA511F /* treevia.png in Resources */ = {isa = PBXBuildFile; fileRef = A1343BB01B38CFD200DA511F /* treevia.png */; };
+		A13DAC211B39E99200B4CA3B /* donations.png in Resources */ = {isa = PBXBuildFile; fileRef = A13DAC201B39E99200B4CA3B /* donations.png */; };
+		A13DAC231B39E99B00B4CA3B /* how_to_adopt_a_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */; };
+		A13DAC251B39F58100B4CA3B /* Support the ArboretumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13DAC241B39F58100B4CA3B /* Support the ArboretumViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1343B891B38CB2600DA511F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1343B6B1B38CB2600DA511F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1343B721B38CB2600DA511F;
+			remoteInfo = IOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1641EFF5B5526637145B06C9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		35CB46CAE37DEDD3C0C2F7D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3E0979DC1C143B670058A6E3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deatilimageViewController.swift; sourceTree = "<group>"; };
+		3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoVC.swift; sourceTree = "<group>"; };
+		3E28E5841C142CFC00146FFC /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
+		3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoThumbnail.swift; path = ../PhotoThumbnail.swift; sourceTree = "<group>"; };
+		3E2DE8451BF594D9000542D3 /* Browse_Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Browse_Photos.png; sourceTree = "<group>"; };
+		3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel_Upload.png; sourceTree = "<group>"; };
+		3E2DE8471BF594D9000542D3 /* take_a_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = take_a_photo.png; sourceTree = "<group>"; };
+		3E2DE8481BF594D9000542D3 /* Upload_Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload_Photo.png; sourceTree = "<group>"; };
+		3E2DE84F1BF59923000542D3 /* Photo_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo_ViewController.swift; sourceTree = "<group>"; };
+		3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		3E2E9BD71C13C958003F5314 /* SRWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWebClient.swift; sourceTree = "<group>"; };
+		3E30108C1BCB588E00190434 /* customWindowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customWindowInfo.swift; sourceTree = "<group>"; };
+		3E30108E1BCB589A00190434 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		3E3010901BCB58B000190434 /* infowindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infowindow.png; sourceTree = "<group>"; };
+		3E3010921BCB58CB00190434 /* watermarksmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watermarksmiley.jpg; sourceTree = "<group>"; };
+		3E3010941BCB58D200190434 /* arrow-Forward Direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-Forward Direction.png"; sourceTree = "<group>"; };
+		3E3010961BCB58ED00190434 /* updated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = updated.png; sourceTree = "<group>"; };
+		3E3010981BCB5A8700190434 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3E30109A1BCB5AB300190434 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E30109C1BCB5B1100190434 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3E30109E1BCB5B1A00190434 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3E3010A01BCB5B4500190434 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3E3010A21BCB5B4E00190434 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		3E3010A41BCB5B5E00190434 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3E3010A61BCB5BA100190434 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		3E3010A81BCB5BAC00190434 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3E3010AA1BCB5BB700190434 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3E3010AC1BCB5BD000190434 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E68C0461B5D79BD009D8429 /* Dontation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dontation.swift; path = ../Dontation.swift; sourceTree = "<group>"; };
+		3E68C0481B5DAE89009D8429 /* missouriarboretumlogo1205px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo1205px.png; sourceTree = "<group>"; };
+		3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo.png; sourceTree = "<group>"; };
+		3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arboretumlaunchericon.png; sourceTree = "<group>"; };
+		3E68C0501B5DD21D009D8429 /* arboretumappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arboretumappicon.png; sourceTree = "<group>"; };
+		3E8D047F1B4ED58500165212 /* ContactUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		3E9239A01B4DDC7300BACBAA /* adoptatreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = adoptatreeViewController.swift; path = ../adoptatreeViewController.swift; sourceTree = "<group>"; };
+		3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		3E9C4B371B5FF18C00CA2FD4 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		3E9C4B381B5FF18C00CA2FD4 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
+		3E9C4B391B5FF18C00CA2FD4 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		3E9C4B3A1B5FF18C00CA2FD4 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		3E9C4B3B1B5FF18C00CA2FD4 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		3E9C4B3C1B5FF18C00CA2FD4 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		3E9C4B3D1B5FF18C00CA2FD4 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		3E9C4B3E1B5FF18C00CA2FD4 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		3E9C4B3F1B5FF18C00CA2FD4 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		3EADFA0C1BCB48BD00749860 /* TrailsViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailsViewContrller.swift; path = ../TrailsViewContrller.swift; sourceTree = "<group>"; };
+		3EADFA0E1BCB4B7300749860 /* TrailsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailsMapViewController.swift; sourceTree = "<group>"; };
+		3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatauquatrails.png; sourceTree = "<group>"; };
+		3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaunttrail.png; sourceTree = "<group>"; };
+		3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shrubwalk.png; sourceTree = "<group>"; };
+		3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = towertrail.png; sourceTree = "<group>"; };
+		3EC7B95C1B41FA4E00DC9FE3 /* DetailtreeinfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailtreeinfoViewController.swift; sourceTree = "<group>"; };
+		3EC7B9601B42EAE300DC9FE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3EC7B9621B42EBDF00DC9FE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3EC7B9641B431AF600DC9FE3 /* TreeviaquestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeviaquestionsViewController.swift; sourceTree = "<group>"; };
+		3ED3E0391B4CF09100CD2409 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
+		3ED3E03A1B4CF09100CD2409 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
+		3ED3E03D1B4CF28000CD2409 /* My Navigation controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "My Navigation controller.swift"; sourceTree = "<group>"; };
+		3ED3E03F1B4CF3A400CD2409 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
+		3ED3E0411B4CF4C300CD2409 /* IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		3ED3E0421B4CF4E700CD2409 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		3ED9E7A91C04C8180041B196 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		3ED9E7AA1C04C8180041B196 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		3ED9E7AB1C04C8180041B196 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommemorativeMapViewController.swift; sourceTree = "<group>"; };
+		3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorMapViewController.swift; sourceTree = "<group>"; };
+		3EEE2E881C0E375200F7DBF8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		8419CE5C1B54D2F00003487C /* ImageScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollViewController.swift; sourceTree = "<group>"; };
+		84372F371B3B37CC0040CD23 /* TreeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeInfoViewController.swift; sourceTree = "<group>"; };
+		84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeInfoCell.swift; sourceTree = "<group>"; };
+		84C60F221B3F98FA00E06CD7 /* CommemorativeTreeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommemorativeTreeTable.swift; path = ../CommemorativeTreeTable.swift; sourceTree = "<group>"; };
+		84C60F241B3FA48E00E06CD7 /* DonorsTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsTableList.swift; sourceTree = "<group>"; };
+		84C60F281B3FACF700E06CD7 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image_logo_converted.png; sourceTree = "<group>"; };
+		A10C2D551B39DBD800E2F809 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
+		A10C2D571B39E14000E2F809 /* supportthearboretum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = supportthearboretum.png; sourceTree = "<group>"; };
+		A10C2D591B39E16700E2F809 /* commemorative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commemorative.png; sourceTree = "<group>"; };
+		A10C2D5B1B39E18000E2F809 /* donors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donors.png; sourceTree = "<group>"; };
+		A10C2D5D1B39E19300E2F809 /* answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answer.png; sourceTree = "<group>"; };
+		A1343B731B38CB2600DA511F /* Arboretum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arboretum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1343B771B38CB2600DA511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1343B781B38CB2600DA511F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1343B7D1B38CB2600DA511F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1343B7F1B38CB2600DA511F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1343B821B38CB2600DA511F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A1343B881B38CB2600DA511F /* Arboretum.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Arboretum.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1343B8D1B38CB2600DA511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1343B8E1B38CB2600DA511F /* IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTests.swift; sourceTree = "<group>"; };
+		A1343B981B38CBC200DA511F /* tanbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanbackground.png; path = IOS/tanbackground.png; sourceTree = "<group>"; };
+		A1343B9A1B38CE7E00DA511F /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo800px.png; sourceTree = "<group>"; };
+		A1343BA21B38CF5900DA511F /* action_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_search.png; sourceTree = "<group>"; };
+		A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adoptatreehomescreen.png; sourceTree = "<group>"; };
+		A1343BA61B38CF8500DA511F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		A1343BA81B38CF9B00DA511F /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
+		A1343BAA1B38CFBA00DA511F /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
+		A1343BAC1B38CFC500DA511F /* trails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trails.png; sourceTree = "<group>"; };
+		A1343BAE1B38CFCB00DA511F /* tree_information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_information.png; sourceTree = "<group>"; };
+		A1343BB01B38CFD200DA511F /* treevia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treevia.png; sourceTree = "<group>"; };
+		A13DAC201B39E99200B4CA3B /* donations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donations.png; sourceTree = "<group>"; };
+		A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how_to_adopt_a_tree.png; sourceTree = "<group>"; };
+		A13DAC241B39F58100B4CA3B /* Support the ArboretumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Support the ArboretumViewController.swift"; sourceTree = "<group>"; };
+		E1786EED20BACB6FADD014CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1343B701B38CB2600DA511F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0979DD1C143B670058A6E3 /* Photos.framework in Frameworks */,
+				3E3010AD1BCB5BD000190434 /* SystemConfiguration.framework in Frameworks */,
+				3E3010AB1BCB5BB700190434 /* libz.tbd in Frameworks */,
+				3E3010A91BCB5BAC00190434 /* libc++.tbd in Frameworks */,
+				3E3010A71BCB5BA100190434 /* libicucore.tbd in Frameworks */,
+				3E3010A51BCB5B5E00190434 /* ImageIO.framework in Frameworks */,
+				3E3010A31BCB5B4E00190434 /* CoreText.framework in Frameworks */,
+				3E3010A11BCB5B4500190434 /* GLKit.framework in Frameworks */,
+				3E30109F1BCB5B1A00190434 /* CoreData.framework in Frameworks */,
+				3E30109D1BCB5B1100190434 /* AVFoundation.framework in Frameworks */,
+				3E30109B1BCB5AB300190434 /* QuartzCore.framework in Frameworks */,
+				3E3010991BCB5A8700190434 /* OpenGLES.framework in Frameworks */,
+				3EC7B9631B42EBDF00DC9FE3 /* CoreLocation.framework in Frameworks */,
+				3EC7B9611B42EAE300DC9FE3 /* MapKit.framework in Frameworks */,
+				5303FA8C91CE81E15CD597E8 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1343B851B38CB2600DA511F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1587B83C2FD7553596118B3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35CB46CAE37DEDD3C0C2F7D5 /* Pods.debug.xcconfig */,
+				1641EFF5B5526637145B06C9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3ED9E7AF1C04F4B40041B196 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */,
+				3E9C4B371B5FF18C00CA2FD4 /* Icon-40@2x.png */,
+				3E9C4B381B5FF18C00CA2FD4 /* Icon-40@3x.png */,
+				3E9C4B391B5FF18C00CA2FD4 /* Icon-60@2x.png */,
+				3E9C4B3A1B5FF18C00CA2FD4 /* Icon-60@3x.png */,
+				3E9C4B3B1B5FF18C00CA2FD4 /* Icon-76.png */,
+				3E9C4B3C1B5FF18C00CA2FD4 /* Icon-76@2x.png */,
+				3E9C4B3D1B5FF18C00CA2FD4 /* Icon-Small.png */,
+				3E9C4B3E1B5FF18C00CA2FD4 /* Icon-Small@2x.png */,
+				3E9C4B3F1B5FF18C00CA2FD4 /* Icon-Small@3x.png */,
+				3E68C0481B5DAE89009D8429 /* missouriarboretumlogo1205px.png */,
+				3E3010901BCB58B000190434 /* infowindow.png */,
+				3E2DE8451BF594D9000542D3 /* Browse_Photos.png */,
+				3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */,
+				3E2DE8471BF594D9000542D3 /* take_a_photo.png */,
+				3E2DE8481BF594D9000542D3 /* Upload_Photo.png */,
+				3E3010941BCB58D200190434 /* arrow-Forward Direction.png */,
+				3E3010961BCB58ED00190434 /* updated.png */,
+				3E3010921BCB58CB00190434 /* watermarksmiley.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		652B6F469123AEC1CC8F8E64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E0979DC1C143B670058A6E3 /* Photos.framework */,
+				3E3010AC1BCB5BD000190434 /* SystemConfiguration.framework */,
+				3E3010AA1BCB5BB700190434 /* libz.tbd */,
+				3E3010A81BCB5BAC00190434 /* libc++.tbd */,
+				3E3010A61BCB5BA100190434 /* libicucore.tbd */,
+				3E3010A41BCB5B5E00190434 /* ImageIO.framework */,
+				3E3010A21BCB5B4E00190434 /* CoreText.framework */,
+				3E3010A01BCB5B4500190434 /* GLKit.framework */,
+				3E30109E1BCB5B1A00190434 /* CoreData.framework */,
+				3E30109C1BCB5B1100190434 /* AVFoundation.framework */,
+				3E30109A1BCB5AB300190434 /* QuartzCore.framework */,
+				3E3010981BCB5A8700190434 /* OpenGLES.framework */,
+				E1786EED20BACB6FADD014CA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1343B6A1B38CB2600DA511F = {
+			isa = PBXGroup;
+			children = (
+				3EC7B9621B42EBDF00DC9FE3 /* CoreLocation.framework */,
+				3EC7B9601B42EAE300DC9FE3 /* MapKit.framework */,
+				A1343B751B38CB2600DA511F /* IOS */,
+				A1343B8B1B38CB2600DA511F /* IOSTests */,
+				A1343B741B38CB2600DA511F /* Products */,
+				3E68C0501B5DD21D009D8429 /* arboretumappicon.png */,
+				3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */,
+				3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */,
+				3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */,
+				A1343B981B38CBC200DA511F /* tanbackground.png */,
+				A1343B9A1B38CE7E00DA511F /* logo1.png */,
+				A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */,
+				A1343BA21B38CF5900DA511F /* action_search.png */,
+				A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */,
+				3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */,
+				3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */,
+				3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */,
+				A1343BA61B38CF8500DA511F /* facebook.png */,
+				A1343BA81B38CF9B00DA511F /* information.png */,
+				A1343BAA1B38CFBA00DA511F /* photos.png */,
+				A1343BAC1B38CFC500DA511F /* trails.png */,
+				A1343BAE1B38CFCB00DA511F /* tree_information.png */,
+				A1343BB01B38CFD200DA511F /* treevia.png */,
+				A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */,
+				A10C2D571B39E14000E2F809 /* supportthearboretum.png */,
+				A10C2D591B39E16700E2F809 /* commemorative.png */,
+				A10C2D5B1B39E18000E2F809 /* donors.png */,
+				A10C2D5D1B39E19300E2F809 /* answer.png */,
+				A13DAC201B39E99200B4CA3B /* donations.png */,
+				A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */,
+				3ED9E7A91C04C8180041B196 /* 1.png */,
+				3ED9E7AA1C04C8180041B196 /* 2.png */,
+				3ED9E7AB1C04C8180041B196 /* 3.png */,
+				1587B83C2FD7553596118B3E /* Pods */,
+				652B6F469123AEC1CC8F8E64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A1343B741B38CB2600DA511F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1343B731B38CB2600DA511F /* Arboretum.app */,
+				A1343B881B38CB2600DA511F /* Arboretum.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1343B751B38CB2600DA511F /* IOS */ = {
+			isa = PBXGroup;
+			children = (
+				3ED9E7AF1C04F4B40041B196 /* Images */,
+				84C60F221B3F98FA00E06CD7 /* CommemorativeTreeTable.swift */,
+				3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */,
+				3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */,
+				3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */,
+				3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */,
+				3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */,
+				3E28E5841C142CFC00146FFC /* ViewPhoto.swift */,
+				3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */,
+				3EADFA0C1BCB48BD00749860 /* TrailsViewContrller.swift */,
+				A10C2D551B39DBD800E2F809 /* HomeViewController.swift */,
+				A1343B781B38CB2600DA511F /* AppDelegate.swift */,
+				A1343B7C1B38CB2600DA511F /* Main.storyboard */,
+				3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */,
+				3EEE2E881C0E375200F7DBF8 /* Reach.swift */,
+				3E2DE84F1BF59923000542D3 /* Photo_ViewController.swift */,
+				3E2E9BD71C13C958003F5314 /* SRWebClient.swift */,
+				3EADFA0E1BCB4B7300749860 /* TrailsMapViewController.swift */,
+				3E9239A01B4DDC7300BACBAA /* adoptatreeViewController.swift */,
+				3E68C0461B5D79BD009D8429 /* Dontation.swift */,
+				3E30108E1BCB589A00190434 /* InfoWindow.xib */,
+				8419CE5C1B54D2F00003487C /* ImageScrollViewController.swift */,
+				3E8D047F1B4ED58500165212 /* ContactUs.swift */,
+				3ED3E03D1B4CF28000CD2409 /* My Navigation controller.swift */,
+				3EC7B9641B431AF600DC9FE3 /* TreeviaquestionsViewController.swift */,
+				3ED3E03F1B4CF3A400CD2409 /* MyMenuTableViewController.swift */,
+				3E30108C1BCB588E00190434 /* customWindowInfo.swift */,
+				84C60F241B3FA48E00E06CD7 /* DonorsTableList.swift */,
+				84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */,
+				84C60F281B3FACF700E06CD7 /* Details.swift */,
+				84372F371B3B37CC0040CD23 /* TreeInfoViewController.swift */,
+				3EC7B95C1B41FA4E00DC9FE3 /* DetailtreeinfoViewController.swift */,
+				A13DAC241B39F58100B4CA3B /* Support the ArboretumViewController.swift */,
+				A1343B7F1B38CB2600DA511F /* Images.xcassets */,
+				A1343B811B38CB2600DA511F /* LaunchScreen.xib */,
+				A1343B761B38CB2600DA511F /* Supporting Files */,
+			);
+			path = IOS;
+			sourceTree = "<group>";
+		};
+		A1343B761B38CB2600DA511F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3ED3E0391B4CF09100CD2409 /* ENSideMenu.swift */,
+				3ED3E0411B4CF4C300CD2409 /* IOS-Bridging-Header.h */,
+				3ED3E0421B4CF4E700CD2409 /* SWRevealViewController.h */,
+				3ED3E03A1B4CF09100CD2409 /* ENSideMenuNavigationController.swift */,
+				A1343B771B38CB2600DA511F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1343B8B1B38CB2600DA511F /* IOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1343B8E1B38CB2600DA511F /* IOSTests.swift */,
+				A1343B8C1B38CB2600DA511F /* Supporting Files */,
+			);
+			path = IOSTests;
+			sourceTree = "<group>";
+		};
+		A1343B8C1B38CB2600DA511F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1343B8D1B38CB2600DA511F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1343B721B38CB2600DA511F /* Arboretum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1343B921B38CB2600DA511F /* Build configuration list for PBXNativeTarget "Arboretum" */;
+			buildPhases = (
+				517B24E13E68DC53C1542A67 /* Check Pods Manifest.lock */,
+				A1343B6F1B38CB2600DA511F /* Sources */,
+				A1343B701B38CB2600DA511F /* Frameworks */,
+				A1343B711B38CB2600DA511F /* Resources */,
+				D918848B88302C4FE1D856F3 /* Embed Pods Frameworks */,
+				84AE8A379B01650383FA3C28 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arboretum;
+			productName = IOS;
+			productReference = A1343B731B38CB2600DA511F /* Arboretum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1343B871B38CB2600DA511F /* ArboretumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1343B951B38CB2600DA511F /* Build configuration list for PBXNativeTarget "ArboretumTests" */;
+			buildPhases = (
+				A1343B841B38CB2600DA511F /* Sources */,
+				A1343B851B38CB2600DA511F /* Frameworks */,
+				A1343B861B38CB2600DA511F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1343B8A1B38CB2600DA511F /* PBXTargetDependency */,
+			);
+			name = ArboretumTests;
+			productName = IOSTests;
+			productReference = A1343B881B38CB2600DA511F /* Arboretum.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1343B6B1B38CB2600DA511F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Student;
+				TargetAttributes = {
+					A1343B721B38CB2600DA511F = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 583N2DJ8B2;
+					};
+					A1343B871B38CB2600DA511F = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A1343B721B38CB2600DA511F;
+					};
+				};
+			};
+			buildConfigurationList = A1343B6E1B38CB2600DA511F /* Build configuration list for PBXProject "Arboretum" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1343B6A1B38CB2600DA511F;
+			productRefGroup = A1343B741B38CB2600DA511F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1343B721B38CB2600DA511F /* Arboretum */,
+				A1343B871B38CB2600DA511F /* ArboretumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1343B711B38CB2600DA511F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10C2D5C1B39E18000E2F809 /* donors.png in Resources */,
+				3E68C0491B5DAE89009D8429 /* missouriarboretumlogo1205px.png in Resources */,
+				3EC7B9571B41F1BE00DC9FE3 /* gaunttrail.png in Resources */,
+				3ED9E7AE1C04C8180041B196 /* 3.png in Resources */,
+				A10C2D5A1B39E16700E2F809 /* commemorative.png in Resources */,
+				A1343BA91B38CF9B00DA511F /* information.png in Resources */,
+				A1343B7E1B38CB2600DA511F /* Main.storyboard in Resources */,
+				3E9C4B421B5FF18C00CA2FD4 /* Icon-40@3x.png in Resources */,
+				3E3010931BCB58CB00190434 /* watermarksmiley.jpg in Resources */,
+				A1343BA31B38CF5900DA511F /* action_search.png in Resources */,
+				A1343BA71B38CF8500DA511F /* facebook.png in Resources */,
+				3E2DE8491BF594D9000542D3 /* Browse_Photos.png in Resources */,
+				3E68C0511B5DD21D009D8429 /* arboretumappicon.png in Resources */,
+				3ED9E7AD1C04C8180041B196 /* 2.png in Resources */,
+				3E9C4B461B5FF18C00CA2FD4 /* Icon-76@2x.png in Resources */,
+				3E3010911BCB58B000190434 /* infowindow.png in Resources */,
+				3E2DE84A1BF594D9000542D3 /* Cancel_Upload.png in Resources */,
+				3E2DE84B1BF594D9000542D3 /* take_a_photo.png in Resources */,
+				3E3010971BCB58ED00190434 /* updated.png in Resources */,
+				3E2DE84C1BF594D9000542D3 /* Upload_Photo.png in Resources */,
+				3E30108F1BCB589A00190434 /* InfoWindow.xib in Resources */,
+				3E68C04D1B5DCE94009D8429 /* arboretumlaunchericon.png in Resources */,
+				A1343B9F1B38CECF00DA511F /* missouriarboretumlogo800px.png in Resources */,
+				A10C2D521B39C94300E2F809 /* test_image_logo_converted.png in Resources */,
+				3EC7B9551B41F1B600DC9FE3 /* chatauquatrails.png in Resources */,
+				3E9C4B471B5FF18C00CA2FD4 /* Icon-Small.png in Resources */,
+				A1343B831B38CB2600DA511F /* LaunchScreen.xib in Resources */,
+				3E3010951BCB58D200190434 /* arrow-Forward Direction.png in Resources */,
+				3E9C4B401B5FF18C00CA2FD4 /* Icon-40.png in Resources */,
+				3ED9E7AC1C04C8180041B196 /* 1.png in Resources */,
+				3EC7B9591B41F1D000DC9FE3 /* shrubwalk.png in Resources */,
+				3E9C4B451B5FF18C00CA2FD4 /* Icon-76.png in Resources */,
+				A1343B801B38CB2600DA511F /* Images.xcassets in Resources */,
+				3E9C4B481B5FF18C00CA2FD4 /* Icon-Small@2x.png in Resources */,
+				A1343BAD1B38CFC500DA511F /* trails.png in Resources */,
+				A10C2D581B39E14000E2F809 /* supportthearboretum.png in Resources */,
+				A1343BAB1B38CFBA00DA511F /* photos.png in Resources */,
+				A10C2D5E1B39E19300E2F809 /* answer.png in Resources */,
+				A1343BA51B38CF5E00DA511F /* adoptatreehomescreen.png in Resources */,
+				3E9C4B491B5FF18C00CA2FD4 /* Icon-Small@3x.png in Resources */,
+				A13DAC211B39E99200B4CA3B /* donations.png in Resources */,
+				A1343BAF1B38CFCB00DA511F /* tree_information.png in Resources */,
+				A1343B9B1B38CE7E00DA511F /* logo1.png in Resources */,
+				3E9C4B431B5FF18C00CA2FD4 /* Icon-60@2x.png in Resources */,
+				A1343BB11B38CFD200DA511F /* treevia.png in Resources */,
+				A1343B991B38CBC200DA511F /* tanbackground.png in Resources */,
+				3E9C4B411B5FF18C00CA2FD4 /* Icon-40@2x.png in Resources */,
+				3EC7B95B1B41F1D600DC9FE3 /* towertrail.png in Resources */,
+				A13DAC231B39E99B00B4CA3B /* how_to_adopt_a_tree.png in Resources */,
+				3E9C4B441B5FF18C00CA2FD4 /* Icon-60@3x.png in Resources */,
+				3E68C04B1B5DB5EF009D8429 /* missouriarboretumlogo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1343B861B38CB2600DA511F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		517B24E13E68DC53C1542A67 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84AE8A379B01650383FA3C28 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D918848B88302C4FE1D856F3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1343B6F1B38CB2600DA511F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E2DE8601BF974F2000542D3 /* CollectionViewController.swift in Sources */,
+				3E28E5651C142A9200146FFC /* UploadPhotoVC.swift in Sources */,
+				3EC7B9651B431AF600DC9FE3 /* TreeviaquestionsViewController.swift in Sources */,
+				3EED61651C17A15200D2AD5D /* CommemorativeMapViewController.swift in Sources */,
+				3E2DE8621BF97524000542D3 /* CollectionViewCell.swift in Sources */,
+				3ED3E03B1B4CF09100CD2409 /* ENSideMenu.swift in Sources */,
+				3ED3E03C1B4CF09100CD2409 /* ENSideMenuNavigationController.swift in Sources */,
+				84372F381B3B37CC0040CD23 /* TreeInfoViewController.swift in Sources */,
+				A1343B791B38CB2600DA511F /* AppDelegate.swift in Sources */,
+				3E68C0471B5D79BD009D8429 /* Dontation.swift in Sources */,
+				A13DAC251B39F58100B4CA3B /* Support the ArboretumViewController.swift in Sources */,
+				A10C2D561B39DBD800E2F809 /* HomeViewController.swift in Sources */,
+				3E28E5851C142CFC00146FFC /* ViewPhoto.swift in Sources */,
+				3E8D04801B4ED58500165212 /* ContactUs.swift in Sources */,
+				3E30108D1BCB588E00190434 /* customWindowInfo.swift in Sources */,
+				3E9239A11B4DDC7300BACBAA /* adoptatreeViewController.swift in Sources */,
+				3E28E5871C142DC300146FFC /* PhotoThumbnail.swift in Sources */,
+				3EADFA0F1BCB4B7300749860 /* TrailsMapViewController.swift in Sources */,
+				3ED3E0401B4CF3A400CD2409 /* MyMenuTableViewController.swift in Sources */,
+				8419CE5D1B54D2F00003487C /* ImageScrollViewController.swift in Sources */,
+				3E2DE8501BF59923000542D3 /* Photo_ViewController.swift in Sources */,
+				3EEE2E891C0E375200F7DBF8 /* Reach.swift in Sources */,
+				3EED61671C17AD4C00D2AD5D /* DonorMapViewController.swift in Sources */,
+				3E2E9BD81C13C959003F5314 /* SRWebClient.swift in Sources */,
+				84C60F291B3FACF700E06CD7 /* Details.swift in Sources */,
+				3EADFA0D1BCB48BD00749860 /* TrailsViewContrller.swift in Sources */,
+				84C60F251B3FA48E00E06CD7 /* DonorsTableList.swift in Sources */,
+				3E0979DF1C15152C0058A6E3 /* deatilimageViewController.swift in Sources */,
+				3ED3E03E1B4CF28000CD2409 /* My Navigation controller.swift in Sources */,
+				84B0FC711B3DD43700C3F1CA /* TreeInfoCell.swift in Sources */,
+				84C60F231B3F98FA00E06CD7 /* CommemorativeTreeTable.swift in Sources */,
+				3EC7B95D1B41FA4F00DC9FE3 /* DetailtreeinfoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1343B841B38CB2600DA511F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1343B8F1B38CB2600DA511F /* IOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1343B8A1B38CB2600DA511F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1343B721B38CB2600DA511F /* Arboretum */;
+			targetProxy = A1343B891B38CB2600DA511F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1343B7C1B38CB2600DA511F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1343B7D1B38CB2600DA511F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1343B811B38CB2600DA511F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1343B821B38CB2600DA511F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1343B901B38CB2600DA511F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1343B911B38CB2600DA511F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1343B931B38CB2600DA511F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35CB46CAE37DEDD3C0C2F7D5 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = IOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MissouriArboretum.From.Naresh;
+				PRODUCT_NAME = Arboretum;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS/IOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1343B941B38CB2600DA511F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1641EFF5B5526637145B06C9 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = IOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MissouriArboretum.From.Naresh;
+				PRODUCT_NAME = Arboretum;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS/IOS-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1343B961B38CB2600DA511F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NWMissouri.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Arboretum;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arboretum.app/Arboretum";
+			};
+			name = Debug;
+		};
+		A1343B971B38CB2600DA511F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = IOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NWMissouri.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Arboretum;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arboretum.app/Arboretum";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1343B6E1B38CB2600DA511F /* Build configuration list for PBXProject "Arboretum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1343B901B38CB2600DA511F /* Debug */,
+				A1343B911B38CB2600DA511F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1343B921B38CB2600DA511F /* Build configuration list for PBXNativeTarget "Arboretum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1343B931B38CB2600DA511F /* Debug */,
+				A1343B941B38CB2600DA511F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1343B951B38CB2600DA511F /* Build configuration list for PBXNativeTarget "ArboretumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1343B961B38CB2600DA511F /* Debug */,
+				A1343B971B38CB2600DA511F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1343B6B1B38CB2600DA511F /* Project object */;
+}
