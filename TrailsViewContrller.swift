@@ -2,7 +2,7 @@
 //  TrailsViewContrller.swift
 //  IOS
 //
-//  Created by Naresh kumar Nagulavancha on 10/11/15.
+//  Created by Vasudha Jags on 10/11/15.
 //  Copyright © 2015 Student. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  CommemorativeMapViewController.swift
 //  Arboretum
 //
-//  Created by Naresh kumar Nagulavancha on 12/8/15.
+//  Created by Vasudha Jags on 12/8/15.
 //  Copyright © 2015 Student. All rights reserved.
 //
 

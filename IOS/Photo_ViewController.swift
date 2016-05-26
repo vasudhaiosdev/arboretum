@@ -2,7 +2,7 @@
 //  Photo_ViewController.swift
 //  IOS
 //
-//  Created by Naresh kumar Nagulavancha on 11/12/15.
+//  Created by Vasudha Jags on 11/12/15.
 //  Copyright © 2015 Student. All rights reserved.
 //
 
