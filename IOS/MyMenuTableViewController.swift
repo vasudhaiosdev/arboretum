@@ -30,57 +30,40 @@ class MyMenuTableViewController: UITableViewController, UIImagePickerControllerD
     }
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
         
-        
+        //Used to find out whether the device has internet connection or not
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
+            _ = notification.userInfo
             
-            print(userInfo)
+           // print(userInfo)
             
         }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            print("Not connected")
+            //print("Not connected")
             dispatch_async(dispatch_get_main_queue(), {
                 let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
-                let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
+                                let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
-                
                 alertController.addAction(settingsAction)
-                
                 self.presentViewController(alertController, animated: true, completion: nil)
             })
             
             
-        case .Online(.WWAN):
-            print("Connected via WWAN")
-        case .Online(.WiFi):
-            print("Connected via WiFi2")
+        case .Online(.WWAN): break
+        case .Online(.WiFi): break
             
         }
         
 
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+      override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
@@ -118,16 +101,8 @@ class MyMenuTableViewController: UITableViewController, UIImagePickerControllerD
         
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        print("Selected row: \(indexPath.row)")
-//        
-//        if (indexPath.row == selectedMenuItem) {
-//            return
-//        }
-        
+    
         selectedMenuItem = indexPath.row
-        
-        //Present new view controller
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
         switch (indexPath.row) {
@@ -179,90 +154,9 @@ class MyMenuTableViewController: UITableViewController, UIImagePickerControllerD
                 UIApplication.sharedApplication().openURL(url)
             }
           
-            
-         
-            
-            
         }
     
-    
     }
     
     
-    
-//   
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
-//    {
-//        //        itemimage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-//        //        dismissViewControllerAnimated(true , completion: nil)
-//    }
-//    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
-
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

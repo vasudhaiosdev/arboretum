@@ -9,14 +9,15 @@
 import UIKit
 
 class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate, ENSideMenuDelegate, UITextFieldDelegate {
-    var NoInternet:String=""
-    var dimView:UIView!
     @IBOutlet weak var menu: UIBarButtonItem!
-    var CommemorativeTreeArray: NSArray!
-    var filtered:[String] = []
-     var searchActive : Bool = false
     @IBOutlet weak var CommemorativeTable: UITableView!
     @IBOutlet weak var search: UISearchBar!
+    
+    var NoInternet:String=""
+    var dimView:UIView!
+    var CommemorativeTreeArray: NSArray!
+    var filtered:[String] = []
+    var searchActive : Bool = false
     var treename:[String]=[]
     var sufix:[NSString]=["Mrs.","Mr.","Miss"]
     var sufixtwo:[NSString]=["Mr. and Mrs.","Mr.& Mrs."]
@@ -27,10 +28,11 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
     var comlname:NSString=""
     var comfname:NSString=""
     var type:NSString=""
+    
+    //Function that is used to add josn data to an array named CommemorativeTreeArray and after add some contraints to cfname and clname to remove MS and MR from there names and added both of them to a single string
         func dataOfJson(url: String)
         {
         let data = NSData(contentsOfURL: NSURL(string: url)!)
-        //var dataError: NSError?
         CommemorativeTreeArray = try!(NSJSONSerialization.JSONObjectWithData(data!, options:[])) as! NSArray
             for i in CommemorativeTreeArray
             {
@@ -75,6 +77,7 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
                     }
                 treename.append(type.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String + " " + comfname.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String + " " + (comlname.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String) as String)}}
     
+    
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
     }
@@ -91,6 +94,7 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
         searchActive = false;
     }
 
+    //Used to search the data in alphabetical order
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
         filtered = treename.filter({ (text) -> Bool in
@@ -107,7 +111,7 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
     }
     
     
-   
+   //Display the commemorative tree(tree name) list in table form
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
@@ -160,14 +164,8 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
         search.delegate = self
         let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = item
-        
-      
         super.viewDidLoad()
         hideSideMenuView()
-//        var tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "textFieldShouldReturn")
-//        view.addGestureRecognizer(tap)
-
-        // Do any additional setup after loading the view.
     }
 
 
@@ -202,41 +200,29 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
         self.resignFirstResponder()
         hideSideMenuView()
     }
+    
     override func viewWillAppear(animated: Bool) {
         hideSideMenuView()
         let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = item
-        
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
         
-        
+                //Used to find if the net is connected to the device or not
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
-            
-            print(userInfo)
-            
+            _ = notification.userInfo
         }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            print("Not connected")
             NoInternet="NONET"
             dispatch_async(dispatch_get_main_queue(), {
                 let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
                 let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
-                
                 alertController.addAction(settingsAction)
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -244,33 +230,14 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
             
             
         case .Online(.WWAN):
-            print("Connected via WWAN")
               dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/commemorativetable.php")
         case .Online(.WiFi):
-            print("Connected via WiFi2")
               dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/commemorativetable.php")
             
         }
-        
-
-
-    }
-    func dimDisplay(){
-        
-        self.dimView = UIView(frame: self.view.frame)
-        self.dimView.backgroundColor = UIColor.blackColor()
-        self.dimView.alpha = 0
-        view.addSubview(self.dimView)
-        view.bringSubviewToFront(self.dimView)
-        UIView.animateWithDuration(0.3, animations: {self.dimView.alpha = 0.3})
-        
     }
     
-    func brightDisplay(){
-        UIView.animateWithDuration(0.3, animations: {self.dimView.alpha = 0})
-        self.dimView.removeFromSuperview()
-        self.dimView = nil
-    }
+//By cliking on the cell it navigate to the tree physical location throught the map
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "commMapView"){
         let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
@@ -282,15 +249,4 @@ class CommemorativeTreeTable: UIViewController,UITableViewDataSource,UITableView
             
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

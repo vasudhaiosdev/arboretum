@@ -16,112 +16,68 @@ class TrailsViewContrller: UIViewController, ENSideMenuDelegate {
     var imagePath:NSString = ""
     var countTag:Int = 0
     var trailNames  = [String]()
-//    
-//    @IBAction func back(sender: AnyObject) {
-//        self.navigationController?.popViewControllerAnimated(true)
-//    }
+
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
     
-    func sideMenuWillOpen() {
-     //   print("sideMenuWillOpen")
+   
+    func menuWillClose(){
+        hideSideMenuView()
     }
-    
-    func sideMenuWillClose() {
-       // print("sideMenuWillClose")
-    }
-    
-    func sideMenuShouldOpenSideMenu() -> Bool {
-        //print("sideMenuShouldOpenSideMenu")
-        return true
-    }
+ 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         hideSideMenuView()
     }
+    
     override func viewWillAppear(animated: Bool) {
         hideSideMenuView()
-         //self.navigationItem.backBarButtonItem?.title = "Back"
-        // self.navigationItem.title = "Trails"
         let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = item
-        
-        
-        
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
         
-        
+        //Used to find if the net is connected to the device or not
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
-            
-            print(userInfo)
-            
-        }
+            _ = notification.userInfo
+             }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            print("Not connected")
-          
-                let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
-                let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
+            let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
+                 let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
-                
                 alertController.addAction(settingsAction)
-                
                 self.presentViewController(alertController, animated: true, completion: nil)
-         
-            
-            
-        case .Online(.WWAN):
-            print("Connected via WWAN")
+              case .Online(.WWAN):
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/trails.php")
-
         case .Online(.WiFi):
-            print("Connected via WiFi")
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/trails.php")
-
-            
         }
 
-
     }
+    
     func dataOfJson(url :String)
-    {   //var labelX :CGFloat = 30
+    {
         let labelY:CGFloat = 180
         let imageX:CGFloat = 25
         let imageY:CGFloat = 75
         var count:Int = 1
-        
         let data = NSData(contentsOfURL: NSURL(string: url)!)
-        // let dataError: NSError?
         DonorsArray = (try! NSJSONSerialization.JSONObjectWithData(data!, options: [])) as! NSArray
         for i in DonorsArray{
-            
-            
             trailName = i.valueForKey("walkname") as! String
             imagePath = i.valueForKey("image")  as! String
-            
             let image = NSData(contentsOfURL: NSURL(string: imagePath as String)!)
-            
             let imageButton:UIButton = UIButton(type: UIButtonType.Custom)
             imageButton.frame = CGRectMake(imageX, imageY, 75, 75)
             let actualImage:UIImage = UIImage(data: image!)!
             imageButton.backgroundColor = UIColor.whiteColor()
             imageButton.layer.cornerRadius = 8.0
             imageButton.setImage(actualImage, forState: UIControlState.Normal)
-            //imageButton.userInteractionEnabled = true
-            // imageButton.clipsToBounds = true
             imageButton.tag = countTag
             trailNames.append(trailName as String)
             imageButton.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -133,18 +89,7 @@ class TrailsViewContrller: UIViewController, ENSideMenuDelegate {
             label.sizeToFit()
             label.textAlignment = .Center
             label.font = UIFont(name:"Helvetica-Bold" , size: 13)
-            
-            
-//            if(imageX == 275){
-//                imageY = imageY+160
-//                labelY = imageY+100
-//                imageX = 25
-//            }
-//            else{
-//                imageX = imageX+125}
             countTag++
-
-            
             label.translatesAutoresizingMaskIntoConstraints = false
             imageButton.translatesAutoresizingMaskIntoConstraints = false
             
@@ -201,59 +146,25 @@ class TrailsViewContrller: UIViewController, ENSideMenuDelegate {
         performSegueWithIdentifier("gg", sender:button)
     }
     
+    //Is used to naviagte to the maps
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "gg"){
             let svc:TrailsMapViewController = segue.destinationViewController as! TrailsMapViewController
             svc.tagValue = trailNames[(sender?.tag)!]
-            print(trailNames[(sender?.tag)!])
-            let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
+        let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
             self.navigationItem.backBarButtonItem = item
-            
-            
-            //  self.navigationController?.title = "Back"
-            
         }
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-              
-//        if Reachability.isConnectedToNetwork() == false {
-//            print("Internet connection Failed")
-//            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
-//            alert.show()
-//            
-//        } else {
-//            print("Internet connection OK")
         let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = item
-
              self.navigationItem.title = "Trails"
-        
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "tanbackground.png")!)
-            // view.backgroundColor = UIColor.orangeColor()
-        
-            hideSideMenuView()
+                  hideSideMenuView()
             let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "menuWillClose")
             view.addGestureRecognizer(tap)
 
-            
-        //}
-
-        
-                 // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-   
-    
-
-
-
-}
+ }

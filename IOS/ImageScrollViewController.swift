@@ -17,39 +17,16 @@ class ImageScrollViewController: UIViewController {
     
     
     @IBOutlet weak var imageView: UIImageView!
-    
+  
+    //Used to view the images in detail view controller
     override func viewDidLoad()
-    {
-        
-        
-        let image=NSData(contentsOfURL: NSURL(string:imageFile)!)
+    {        let image=NSData(contentsOfURL: NSURL(string:imageFile)!)
         if(image == nil){
         imageView.image = UIImage(contentsOfFile: imageFile)}
-        else{
-        
+        else
+        {
             imageView.image = UIImage(data: image!)}
-        
-    
-        
-      
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
+        }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+  }

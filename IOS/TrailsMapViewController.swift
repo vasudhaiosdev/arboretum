@@ -38,15 +38,12 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
     }
     
     func sideMenuWillOpen() {
-   //     print("sideMenuWillOpen")
     }
     
     func sideMenuWillClose() {
-     //   print("sideMenuWillClose")
     }
     
     func sideMenuShouldOpenSideMenu() -> Bool {
-       // print("sideMenuShouldOpenSideMenu")
         return true
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -58,32 +55,26 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
         
-        
+        //Is used to check the internet connection
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
+            _ = notification.userInfo
             
-            print(userInfo)
+            //print(userInfo)
             
         }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            print("Not connected")
+           // print("Not connected")
             dispatch_async(dispatch_get_main_queue(), {
                 let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
                 let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
                 
                 alertController.addAction(settingsAction)
                 
@@ -92,7 +83,6 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
             
             
         case .Online(.WWAN):
-            print("Connected via WWAN")
             parseJsonForTreeImage("http://csgrad10.nwmissouri.edu/arboretum/images.php")
             
             parseJsonForImage("http://csgrad10.nwmissouri.edu/arboretum/trails.php")
@@ -100,18 +90,12 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
             parseJson("http://csgrad10.nwmissouri.edu/arboretum/treetable.php")
 
         case .Online(.WiFi):
-            print("Connected via WiFi")
             parseJsonForTreeImage("http://csgrad10.nwmissouri.edu/arboretum/images.php")
             
             parseJsonForImage("http://csgrad10.nwmissouri.edu/arboretum/trails.php")
             
             parseJson("http://csgrad10.nwmissouri.edu/arboretum/treetable.php")
-
-            
         }
-        
-
-        
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -202,35 +186,22 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
             convertedImage = ResizeImage(actualImage, targetSize: CGSize(width: 20, height: 20))
             }
         }
-        
-        // let imagePath = trailMapPins[tagVal].valueForKey("flower")  as! String
-        
-       // let image = NSData(contentsOfURL: NSURL(string: imagePath as String)!)
-       // actualImage = UIImage(data: image!)
-       // convertedImage = ResizeImage(actualImage, targetSize: CGSize(width: 20, height: 20))
-    }
+        }
     
+    //fetch the data from server and create the buttons based on the data availbale throught the server
     func parseJson(url: String){
         let data = NSData(contentsOfURL: NSURL(string: url)!)
-        //var dataError:NSError?
        
         trailsMapArray = (try! NSJSONSerialization.JSONObjectWithData(data!, options: [])) as! NSArray
-        print(trailsMapArray.count)
-        print(trailsMapArray[2].valueForKey("longitude")?.doubleValue)
-        
         for i in appDelegate.TreeListArray{
             if(i.valueForKey("walkname") as! String == tagValue){
                 let templattitude = i.valueForKey("latitude") as! NSString
                 let templongitude = i.valueForKey("longitude") as! NSString
                 let treeName = i.valueForKey("cname") as! NSString
                 let treeId = i.valueForKey("treeid") as! NSString
-                print(treeId)
                 let treePreviewImage:UIImage = getTheTreeImage(treeId)
                 lattitude = templattitude.doubleValue as CLLocationDegrees
-                print(lattitude)
                 longitude = templongitude.doubleValue as CLLocationDegrees
-                print(longitude)
-                
                 let location = CLLocationCoordinate2D(latitude: self.lattitude, longitude: self.longitude)
                 let camera = GMSCameraPosition.cameraWithTarget(location, zoom: 16)
                 viewMap.camera = camera
@@ -246,33 +217,6 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
             }
         
         }
-        
-//        for i in trailsMapArray{
-//            let templattitude = i.valueForKey("latitude") as! NSString
-//            let templongitude = i.valueForKey("longitude") as! NSString
-//            let treeName = i.valueForKey("cname") as! NSString
-//            let treeId = i.valueForKey("treeid") as! NSString
-//            print(treeId)
-//            let treePreviewImage:UIImage = getTheTreeImage(treeId)
-//            lattitude = templattitude.doubleValue as CLLocationDegrees
-//            print(lattitude)
-//            longitude = templongitude.doubleValue as CLLocationDegrees
-//            print(longitude)
-//            
-//            let location = CLLocationCoordinate2D(latitude: self.lattitude, longitude: self.longitude)
-//            let camera = GMSCameraPosition.cameraWithTarget(location, zoom: 16)
-//            viewMap.camera = camera
-//            let marker = GMSMarker()
-//            marker.position = location
-//            marker.title = treeName as String
-//            //marker.snippet = "(treeName as String)"
-//            marker.icon = convertedImage
-//            marker.flat = true
-//            marker.map = viewMap
-//            marker.userData = treePreviewImage
-//            
-//        }
-        
         
     }
     
@@ -300,13 +244,6 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         
-//        print("marker tapped")
-//        let view:customWindowInfo = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil)[0] as! customWindowInfo
-//        view.backgroundColor = UIColor(patternImage: UIImage(named: "infowindow")! )
-//        view.detailView.urlString = marker.title
-//        print(view.detailView.urlString)
-//        view.detailView.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-        
          performSegueWithIdentifier("goToTreeInformation", sender:marker)
         
     }
@@ -316,18 +253,12 @@ class TrailsMapViewController: UIViewController, CLLocationManagerDelegate, GMSM
         
         view.customImage.image = marker.userData as? UIImage
         view.treeName.text = marker.title
-        
-//        view.detailView.urlString = marker.title
-//        print(view.detailView.urlString)
-//        view.detailView.addTarget(self, action: "buttonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-
         return view
         
     }
     
     func buttonClicked(button: AnyObject) {
         //  println(button.tag)
-        print("Iam Clicked")
         performSegueWithIdentifier("goToTreeInformation", sender:button)
     }
     

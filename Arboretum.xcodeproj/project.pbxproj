@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E0979DD1C143B670058A6E3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0979DC1C143B670058A6E3 /* Photos.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3E0979DF1C15152C0058A6E3 /* deatilimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */; };
-		3E28E5651C142A9200146FFC /* UploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */; };
-		3E28E5851C142CFC00146FFC /* ViewPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5841C142CFC00146FFC /* ViewPhoto.swift */; };
-		3E28E5871C142DC300146FFC /* PhotoThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */; };
+		3E15672D1C21ECA50040F707 /* customWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15672C1C21ECA50040F707 /* customWindowInfo.swift */; };
 		3E2DE8491BF594D9000542D3 /* Browse_Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8451BF594D9000542D3 /* Browse_Photos.png */; };
 		3E2DE84A1BF594D9000542D3 /* Cancel_Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */; };
 		3E2DE84B1BF594D9000542D3 /* take_a_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DE8471BF594D9000542D3 /* take_a_photo.png */; };
@@ -20,11 +18,9 @@
 		3E2DE8601BF974F2000542D3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */; };
 		3E2DE8621BF97524000542D3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */; };
 		3E2E9BD81C13C959003F5314 /* SRWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E9BD71C13C958003F5314 /* SRWebClient.swift */; };
-		3E30108D1BCB588E00190434 /* customWindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E30108C1BCB588E00190434 /* customWindowInfo.swift */; };
 		3E30108F1BCB589A00190434 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E30108E1BCB589A00190434 /* InfoWindow.xib */; };
 		3E3010911BCB58B000190434 /* infowindow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010901BCB58B000190434 /* infowindow.png */; };
 		3E3010931BCB58CB00190434 /* watermarksmiley.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010921BCB58CB00190434 /* watermarksmiley.jpg */; };
-		3E3010951BCB58D200190434 /* arrow-Forward Direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010941BCB58D200190434 /* arrow-Forward Direction.png */; };
 		3E3010971BCB58ED00190434 /* updated.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3010961BCB58ED00190434 /* updated.png */; };
 		3E3010991BCB5A8700190434 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3010981BCB5A8700190434 /* OpenGLES.framework */; };
 		3E30109B1BCB5AB300190434 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E30109A1BCB5AB300190434 /* QuartzCore.framework */; };
@@ -42,6 +38,7 @@
 		3E68C04B1B5DB5EF009D8429 /* missouriarboretumlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */; };
 		3E68C04D1B5DCE94009D8429 /* arboretumlaunchericon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */; };
 		3E68C0511B5DD21D009D8429 /* arboretumappicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E68C0501B5DD21D009D8429 /* arboretumappicon.png */; };
+		3E7563171C1BEA5A00CF21B4 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7563161C1BEA5A00CF21B4 /* notAvailable.png */; };
 		3E8D04801B4ED58500165212 /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D047F1B4ED58500165212 /* ContactUs.swift */; };
 		3E9239A11B4DDC7300BACBAA /* adoptatreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9239A01B4DDC7300BACBAA /* adoptatreeViewController.swift */; };
 		3E9C4B401B5FF18C00CA2FD4 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */; };
@@ -72,9 +69,8 @@
 		3ED9E7AD1C04C8180041B196 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED9E7AA1C04C8180041B196 /* 2.png */; };
 		3ED9E7AE1C04C8180041B196 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED9E7AB1C04C8180041B196 /* 3.png */; };
 		3EED61651C17A15200D2AD5D /* CommemorativeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */; };
-		3EED61671C17AD4C00D2AD5D /* DonorMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */; };
-		3EEE2E891C0E375200F7DBF8 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEE2E881C0E375200F7DBF8 /* Reach.swift */; };
 		5303FA8C91CE81E15CD597E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1786EED20BACB6FADD014CA /* libPods.a */; };
+		5AF92C6A1C1FCA15002081FB /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF92C691C1FCA15002081FB /* Reach.swift */; };
 		8419CE5D1B54D2F00003487C /* ImageScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419CE5C1B54D2F00003487C /* ImageScrollViewController.swift */; };
 		84372F381B3B37CC0040CD23 /* TreeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84372F371B3B37CC0040CD23 /* TreeInfoViewController.swift */; };
 		84B0FC711B3DD43700C3F1CA /* TreeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */; };
@@ -123,9 +119,7 @@
 		35CB46CAE37DEDD3C0C2F7D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3E0979DC1C143B670058A6E3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deatilimageViewController.swift; sourceTree = "<group>"; };
-		3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoVC.swift; sourceTree = "<group>"; };
-		3E28E5841C142CFC00146FFC /* ViewPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhoto.swift; sourceTree = "<group>"; };
-		3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoThumbnail.swift; path = ../PhotoThumbnail.swift; sourceTree = "<group>"; };
+		3E15672C1C21ECA50040F707 /* customWindowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customWindowInfo.swift; sourceTree = "<group>"; };
 		3E2DE8451BF594D9000542D3 /* Browse_Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Browse_Photos.png; sourceTree = "<group>"; };
 		3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel_Upload.png; sourceTree = "<group>"; };
 		3E2DE8471BF594D9000542D3 /* take_a_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = take_a_photo.png; sourceTree = "<group>"; };
@@ -134,11 +128,9 @@
 		3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3E2E9BD71C13C958003F5314 /* SRWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWebClient.swift; sourceTree = "<group>"; };
-		3E30108C1BCB588E00190434 /* customWindowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customWindowInfo.swift; sourceTree = "<group>"; };
 		3E30108E1BCB589A00190434 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		3E3010901BCB58B000190434 /* infowindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infowindow.png; sourceTree = "<group>"; };
 		3E3010921BCB58CB00190434 /* watermarksmiley.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watermarksmiley.jpg; sourceTree = "<group>"; };
-		3E3010941BCB58D200190434 /* arrow-Forward Direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-Forward Direction.png"; sourceTree = "<group>"; };
 		3E3010961BCB58ED00190434 /* updated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = updated.png; sourceTree = "<group>"; };
 		3E3010981BCB5A8700190434 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3E30109A1BCB5AB300190434 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -153,9 +145,10 @@
 		3E3010AC1BCB5BD000190434 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E68C0461B5D79BD009D8429 /* Dontation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dontation.swift; path = ../Dontation.swift; sourceTree = "<group>"; };
 		3E68C0481B5DAE89009D8429 /* missouriarboretumlogo1205px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo1205px.png; sourceTree = "<group>"; };
-		3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo.png; sourceTree = "<group>"; };
-		3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arboretumlaunchericon.png; sourceTree = "<group>"; };
-		3E68C0501B5DD21D009D8429 /* arboretumappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arboretumappicon.png; sourceTree = "<group>"; };
+		3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missouriarboretumlogo.png; path = ../missouriarboretumlogo.png; sourceTree = "<group>"; };
+		3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arboretumlaunchericon.png; path = ../arboretumlaunchericon.png; sourceTree = "<group>"; };
+		3E68C0501B5DD21D009D8429 /* arboretumappicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arboretumappicon.png; path = ../arboretumappicon.png; sourceTree = "<group>"; };
+		3E7563161C1BEA5A00CF21B4 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
 		3E8D047F1B4ED58500165212 /* ContactUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		3E9239A01B4DDC7300BACBAA /* adoptatreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = adoptatreeViewController.swift; path = ../adoptatreeViewController.swift; sourceTree = "<group>"; };
 		3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
@@ -170,10 +163,10 @@
 		3E9C4B3F1B5FF18C00CA2FD4 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
 		3EADFA0C1BCB48BD00749860 /* TrailsViewContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailsViewContrller.swift; path = ../TrailsViewContrller.swift; sourceTree = "<group>"; };
 		3EADFA0E1BCB4B7300749860 /* TrailsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailsMapViewController.swift; sourceTree = "<group>"; };
-		3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatauquatrails.png; sourceTree = "<group>"; };
-		3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaunttrail.png; sourceTree = "<group>"; };
-		3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shrubwalk.png; sourceTree = "<group>"; };
-		3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = towertrail.png; sourceTree = "<group>"; };
+		3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chatauquatrails.png; path = ../chatauquatrails.png; sourceTree = "<group>"; };
+		3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gaunttrail.png; path = ../gaunttrail.png; sourceTree = "<group>"; };
+		3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shrubwalk.png; path = ../shrubwalk.png; sourceTree = "<group>"; };
+		3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = towertrail.png; path = ../towertrail.png; sourceTree = "<group>"; };
 		3EC7B95C1B41FA4E00DC9FE3 /* DetailtreeinfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailtreeinfoViewController.swift; sourceTree = "<group>"; };
 		3EC7B9601B42EAE300DC9FE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3EC7B9621B42EBDF00DC9FE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -184,24 +177,23 @@
 		3ED3E03F1B4CF3A400CD2409 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		3ED3E0411B4CF4C300CD2409 /* IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		3ED3E0421B4CF4E700CD2409 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		3ED9E7A91C04C8180041B196 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		3ED9E7AA1C04C8180041B196 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		3ED9E7AB1C04C8180041B196 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		3ED9E7A91C04C8180041B196 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../1.png; sourceTree = "<group>"; };
+		3ED9E7AA1C04C8180041B196 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../2.png; sourceTree = "<group>"; };
+		3ED9E7AB1C04C8180041B196 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../3.png; sourceTree = "<group>"; };
 		3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommemorativeMapViewController.swift; sourceTree = "<group>"; };
-		3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorMapViewController.swift; sourceTree = "<group>"; };
-		3EEE2E881C0E375200F7DBF8 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		5AF92C691C1FCA15002081FB /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		8419CE5C1B54D2F00003487C /* ImageScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollViewController.swift; sourceTree = "<group>"; };
 		84372F371B3B37CC0040CD23 /* TreeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeInfoViewController.swift; sourceTree = "<group>"; };
 		84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeInfoCell.swift; sourceTree = "<group>"; };
 		84C60F221B3F98FA00E06CD7 /* CommemorativeTreeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommemorativeTreeTable.swift; path = ../CommemorativeTreeTable.swift; sourceTree = "<group>"; };
 		84C60F241B3FA48E00E06CD7 /* DonorsTableList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsTableList.swift; sourceTree = "<group>"; };
 		84C60F281B3FACF700E06CD7 /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
-		A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image_logo_converted.png; sourceTree = "<group>"; };
+		A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_image_logo_converted.png; path = ../test_image_logo_converted.png; sourceTree = "<group>"; };
 		A10C2D551B39DBD800E2F809 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
-		A10C2D571B39E14000E2F809 /* supportthearboretum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = supportthearboretum.png; sourceTree = "<group>"; };
-		A10C2D591B39E16700E2F809 /* commemorative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commemorative.png; sourceTree = "<group>"; };
-		A10C2D5B1B39E18000E2F809 /* donors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donors.png; sourceTree = "<group>"; };
-		A10C2D5D1B39E19300E2F809 /* answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = answer.png; sourceTree = "<group>"; };
+		A10C2D571B39E14000E2F809 /* supportthearboretum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = supportthearboretum.png; path = ../supportthearboretum.png; sourceTree = "<group>"; };
+		A10C2D591B39E16700E2F809 /* commemorative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = commemorative.png; path = ../commemorative.png; sourceTree = "<group>"; };
+		A10C2D5B1B39E18000E2F809 /* donors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donors.png; path = ../donors.png; sourceTree = "<group>"; };
+		A10C2D5D1B39E19300E2F809 /* answer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = answer.png; path = ../answer.png; sourceTree = "<group>"; };
 		A1343B731B38CB2600DA511F /* Arboretum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arboretum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1343B771B38CB2600DA511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1343B781B38CB2600DA511F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,19 +203,19 @@
 		A1343B881B38CB2600DA511F /* Arboretum.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Arboretum.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1343B8D1B38CB2600DA511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1343B8E1B38CB2600DA511F /* IOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTests.swift; sourceTree = "<group>"; };
-		A1343B981B38CBC200DA511F /* tanbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanbackground.png; path = IOS/tanbackground.png; sourceTree = "<group>"; };
-		A1343B9A1B38CE7E00DA511F /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
-		A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missouriarboretumlogo800px.png; sourceTree = "<group>"; };
-		A1343BA21B38CF5900DA511F /* action_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_search.png; sourceTree = "<group>"; };
-		A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adoptatreehomescreen.png; sourceTree = "<group>"; };
-		A1343BA61B38CF8500DA511F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		A1343BA81B38CF9B00DA511F /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = information.png; sourceTree = "<group>"; };
-		A1343BAA1B38CFBA00DA511F /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
-		A1343BAC1B38CFC500DA511F /* trails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trails.png; sourceTree = "<group>"; };
-		A1343BAE1B38CFCB00DA511F /* tree_information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_information.png; sourceTree = "<group>"; };
-		A1343BB01B38CFD200DA511F /* treevia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treevia.png; sourceTree = "<group>"; };
-		A13DAC201B39E99200B4CA3B /* donations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donations.png; sourceTree = "<group>"; };
-		A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how_to_adopt_a_tree.png; sourceTree = "<group>"; };
+		A1343B981B38CBC200DA511F /* tanbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanbackground.png; sourceTree = "<group>"; };
+		A1343B9A1B38CE7E00DA511F /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1.png; path = ../logo1.png; sourceTree = "<group>"; };
+		A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missouriarboretumlogo800px.png; path = ../missouriarboretumlogo800px.png; sourceTree = "<group>"; };
+		A1343BA21B38CF5900DA511F /* action_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = action_search.png; path = ../action_search.png; sourceTree = "<group>"; };
+		A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adoptatreehomescreen.png; path = ../adoptatreehomescreen.png; sourceTree = "<group>"; };
+		A1343BA61B38CF8500DA511F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = ../facebook.png; sourceTree = "<group>"; };
+		A1343BA81B38CF9B00DA511F /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = ../information.png; sourceTree = "<group>"; };
+		A1343BAA1B38CFBA00DA511F /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photos.png; path = ../photos.png; sourceTree = "<group>"; };
+		A1343BAC1B38CFC500DA511F /* trails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trails.png; path = ../trails.png; sourceTree = "<group>"; };
+		A1343BAE1B38CFCB00DA511F /* tree_information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree_information.png; path = ../tree_information.png; sourceTree = "<group>"; };
+		A1343BB01B38CFD200DA511F /* treevia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = treevia.png; path = ../treevia.png; sourceTree = "<group>"; };
+		A13DAC201B39E99200B4CA3B /* donations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donations.png; path = ../donations.png; sourceTree = "<group>"; };
+		A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = how_to_adopt_a_tree.png; path = ../how_to_adopt_a_tree.png; sourceTree = "<group>"; };
 		A13DAC241B39F58100B4CA3B /* Support the ArboretumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Support the ArboretumViewController.swift"; sourceTree = "<group>"; };
 		E1786EED20BACB6FADD014CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -273,6 +265,35 @@
 		3ED9E7AF1C04F4B40041B196 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E7563161C1BEA5A00CF21B4 /* notAvailable.png */,
+				3E68C0501B5DD21D009D8429 /* arboretumappicon.png */,
+				3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */,
+				3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */,
+				3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */,
+				A1343B981B38CBC200DA511F /* tanbackground.png */,
+				A1343B9A1B38CE7E00DA511F /* logo1.png */,
+				A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */,
+				A1343BA21B38CF5900DA511F /* action_search.png */,
+				A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */,
+				3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */,
+				3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */,
+				3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */,
+				A1343BA61B38CF8500DA511F /* facebook.png */,
+				A1343BA81B38CF9B00DA511F /* information.png */,
+				A1343BAA1B38CFBA00DA511F /* photos.png */,
+				A1343BAC1B38CFC500DA511F /* trails.png */,
+				A1343BAE1B38CFCB00DA511F /* tree_information.png */,
+				A1343BB01B38CFD200DA511F /* treevia.png */,
+				A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */,
+				A10C2D571B39E14000E2F809 /* supportthearboretum.png */,
+				A10C2D591B39E16700E2F809 /* commemorative.png */,
+				A10C2D5B1B39E18000E2F809 /* donors.png */,
+				A10C2D5D1B39E19300E2F809 /* answer.png */,
+				A13DAC201B39E99200B4CA3B /* donations.png */,
+				A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */,
+				3ED9E7A91C04C8180041B196 /* 1.png */,
+				3ED9E7AA1C04C8180041B196 /* 2.png */,
+				3ED9E7AB1C04C8180041B196 /* 3.png */,
 				3E9C4B361B5FF18C00CA2FD4 /* Icon-40.png */,
 				3E9C4B371B5FF18C00CA2FD4 /* Icon-40@2x.png */,
 				3E9C4B381B5FF18C00CA2FD4 /* Icon-40@3x.png */,
@@ -289,11 +310,11 @@
 				3E2DE8461BF594D9000542D3 /* Cancel_Upload.png */,
 				3E2DE8471BF594D9000542D3 /* take_a_photo.png */,
 				3E2DE8481BF594D9000542D3 /* Upload_Photo.png */,
-				3E3010941BCB58D200190434 /* arrow-Forward Direction.png */,
 				3E3010961BCB58ED00190434 /* updated.png */,
 				3E3010921BCB58CB00190434 /* watermarksmiley.jpg */,
 			);
 			name = Images;
+			path = IOS;
 			sourceTree = "<group>";
 		};
 		652B6F469123AEC1CC8F8E64 /* Frameworks */ = {
@@ -324,34 +345,7 @@
 				A1343B751B38CB2600DA511F /* IOS */,
 				A1343B8B1B38CB2600DA511F /* IOSTests */,
 				A1343B741B38CB2600DA511F /* Products */,
-				3E68C0501B5DD21D009D8429 /* arboretumappicon.png */,
-				3E68C04C1B5DCE94009D8429 /* arboretumlaunchericon.png */,
-				3EC7B9561B41F1BE00DC9FE3 /* gaunttrail.png */,
-				3EC7B9541B41F1B600DC9FE3 /* chatauquatrails.png */,
-				A1343B981B38CBC200DA511F /* tanbackground.png */,
-				A1343B9A1B38CE7E00DA511F /* logo1.png */,
-				A1343B9E1B38CECF00DA511F /* missouriarboretumlogo800px.png */,
-				A1343BA21B38CF5900DA511F /* action_search.png */,
-				A1343BA41B38CF5E00DA511F /* adoptatreehomescreen.png */,
-				3EC7B9581B41F1D000DC9FE3 /* shrubwalk.png */,
-				3E68C04A1B5DB5EF009D8429 /* missouriarboretumlogo.png */,
-				3EC7B95A1B41F1D600DC9FE3 /* towertrail.png */,
-				A1343BA61B38CF8500DA511F /* facebook.png */,
-				A1343BA81B38CF9B00DA511F /* information.png */,
-				A1343BAA1B38CFBA00DA511F /* photos.png */,
-				A1343BAC1B38CFC500DA511F /* trails.png */,
-				A1343BAE1B38CFCB00DA511F /* tree_information.png */,
-				A1343BB01B38CFD200DA511F /* treevia.png */,
-				A10C2D511B39C94300E2F809 /* test_image_logo_converted.png */,
-				A10C2D571B39E14000E2F809 /* supportthearboretum.png */,
-				A10C2D591B39E16700E2F809 /* commemorative.png */,
-				A10C2D5B1B39E18000E2F809 /* donors.png */,
-				A10C2D5D1B39E19300E2F809 /* answer.png */,
-				A13DAC201B39E99200B4CA3B /* donations.png */,
-				A13DAC221B39E99B00B4CA3B /* how_to_adopt_a_tree.png */,
-				3ED9E7A91C04C8180041B196 /* 1.png */,
-				3ED9E7AA1C04C8180041B196 /* 2.png */,
-				3ED9E7AB1C04C8180041B196 /* 3.png */,
+				3ED9E7AF1C04F4B40041B196 /* Images */,
 				1587B83C2FD7553596118B3E /* Pods */,
 				652B6F469123AEC1CC8F8E64 /* Frameworks */,
 			);
@@ -369,21 +363,17 @@
 		A1343B751B38CB2600DA511F /* IOS */ = {
 			isa = PBXGroup;
 			children = (
-				3ED9E7AF1C04F4B40041B196 /* Images */,
 				84C60F221B3F98FA00E06CD7 /* CommemorativeTreeTable.swift */,
-				3EED61661C17AD4C00D2AD5D /* DonorMapViewController.swift */,
 				3EED61641C17A15200D2AD5D /* CommemorativeMapViewController.swift */,
 				3E2DE85F1BF974F2000542D3 /* CollectionViewController.swift */,
-				3E28E5641C142A9200146FFC /* UploadPhotoVC.swift */,
-				3E28E5861C142DC300146FFC /* PhotoThumbnail.swift */,
-				3E28E5841C142CFC00146FFC /* ViewPhoto.swift */,
 				3E2DE8611BF97524000542D3 /* CollectionViewCell.swift */,
 				3EADFA0C1BCB48BD00749860 /* TrailsViewContrller.swift */,
+				3E15672C1C21ECA50040F707 /* customWindowInfo.swift */,
 				A10C2D551B39DBD800E2F809 /* HomeViewController.swift */,
 				A1343B781B38CB2600DA511F /* AppDelegate.swift */,
 				A1343B7C1B38CB2600DA511F /* Main.storyboard */,
+				5AF92C691C1FCA15002081FB /* Reach.swift */,
 				3E0979DE1C15152C0058A6E3 /* deatilimageViewController.swift */,
-				3EEE2E881C0E375200F7DBF8 /* Reach.swift */,
 				3E2DE84F1BF59923000542D3 /* Photo_ViewController.swift */,
 				3E2E9BD71C13C958003F5314 /* SRWebClient.swift */,
 				3EADFA0E1BCB4B7300749860 /* TrailsMapViewController.swift */,
@@ -395,7 +385,6 @@
 				3ED3E03D1B4CF28000CD2409 /* My Navigation controller.swift */,
 				3EC7B9641B431AF600DC9FE3 /* TreeviaquestionsViewController.swift */,
 				3ED3E03F1B4CF3A400CD2409 /* MyMenuTableViewController.swift */,
-				3E30108C1BCB588E00190434 /* customWindowInfo.swift */,
 				84C60F241B3FA48E00E06CD7 /* DonorsTableList.swift */,
 				84B0FC701B3DD43700C3F1CA /* TreeInfoCell.swift */,
 				84C60F281B3FACF700E06CD7 /* Details.swift */,
@@ -551,7 +540,6 @@
 				3EC7B9551B41F1B600DC9FE3 /* chatauquatrails.png in Resources */,
 				3E9C4B471B5FF18C00CA2FD4 /* Icon-Small.png in Resources */,
 				A1343B831B38CB2600DA511F /* LaunchScreen.xib in Resources */,
-				3E3010951BCB58D200190434 /* arrow-Forward Direction.png in Resources */,
 				3E9C4B401B5FF18C00CA2FD4 /* Icon-40.png in Resources */,
 				3ED9E7AC1C04C8180041B196 /* 1.png in Resources */,
 				3EC7B9591B41F1D000DC9FE3 /* shrubwalk.png in Resources */,
@@ -566,6 +554,7 @@
 				3E9C4B491B5FF18C00CA2FD4 /* Icon-Small@3x.png in Resources */,
 				A13DAC211B39E99200B4CA3B /* donations.png in Resources */,
 				A1343BAF1B38CFCB00DA511F /* tree_information.png in Resources */,
+				3E7563171C1BEA5A00CF21B4 /* notAvailable.png in Resources */,
 				A1343B9B1B38CE7E00DA511F /* logo1.png in Resources */,
 				3E9C4B431B5FF18C00CA2FD4 /* Icon-60@2x.png in Resources */,
 				A1343BB11B38CFD200DA511F /* treevia.png in Resources */,
@@ -641,7 +630,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E2DE8601BF974F2000542D3 /* CollectionViewController.swift in Sources */,
-				3E28E5651C142A9200146FFC /* UploadPhotoVC.swift in Sources */,
 				3EC7B9651B431AF600DC9FE3 /* TreeviaquestionsViewController.swift in Sources */,
 				3EED61651C17A15200D2AD5D /* CommemorativeMapViewController.swift in Sources */,
 				3E2DE8621BF97524000542D3 /* CollectionViewCell.swift in Sources */,
@@ -652,17 +640,13 @@
 				3E68C0471B5D79BD009D8429 /* Dontation.swift in Sources */,
 				A13DAC251B39F58100B4CA3B /* Support the ArboretumViewController.swift in Sources */,
 				A10C2D561B39DBD800E2F809 /* HomeViewController.swift in Sources */,
-				3E28E5851C142CFC00146FFC /* ViewPhoto.swift in Sources */,
 				3E8D04801B4ED58500165212 /* ContactUs.swift in Sources */,
-				3E30108D1BCB588E00190434 /* customWindowInfo.swift in Sources */,
 				3E9239A11B4DDC7300BACBAA /* adoptatreeViewController.swift in Sources */,
-				3E28E5871C142DC300146FFC /* PhotoThumbnail.swift in Sources */,
 				3EADFA0F1BCB4B7300749860 /* TrailsMapViewController.swift in Sources */,
 				3ED3E0401B4CF3A400CD2409 /* MyMenuTableViewController.swift in Sources */,
 				8419CE5D1B54D2F00003487C /* ImageScrollViewController.swift in Sources */,
+				3E15672D1C21ECA50040F707 /* customWindowInfo.swift in Sources */,
 				3E2DE8501BF59923000542D3 /* Photo_ViewController.swift in Sources */,
-				3EEE2E891C0E375200F7DBF8 /* Reach.swift in Sources */,
-				3EED61671C17AD4C00D2AD5D /* DonorMapViewController.swift in Sources */,
 				3E2E9BD81C13C959003F5314 /* SRWebClient.swift in Sources */,
 				84C60F291B3FACF700E06CD7 /* Details.swift in Sources */,
 				3EADFA0D1BCB48BD00749860 /* TrailsViewContrller.swift in Sources */,
@@ -670,6 +654,7 @@
 				3E0979DF1C15152C0058A6E3 /* deatilimageViewController.swift in Sources */,
 				3ED3E03E1B4CF28000CD2409 /* My Navigation controller.swift in Sources */,
 				84B0FC711B3DD43700C3F1CA /* TreeInfoCell.swift in Sources */,
+				5AF92C6A1C1FCA15002081FB /* Reach.swift in Sources */,
 				84C60F231B3F98FA00E06CD7 /* CommemorativeTreeTable.swift in Sources */,
 				3EC7B95D1B41FA4F00DC9FE3 /* DetailtreeinfoViewController.swift in Sources */,
 			);

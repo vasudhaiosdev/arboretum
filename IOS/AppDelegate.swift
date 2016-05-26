@@ -19,19 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var TreeListArray:NSArray!
     var obj1: DetailtreeinfoViewController!
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-       
+          NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
+           func networkStatusChanged(notification: NSNotification) {
+            _ = notification.userInfo
+             }
         
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
-        
-
-        func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
-            
-            print(userInfo)
-            
-        }
         func LaunchCondition()
         {
             GMSServices.provideAPIKey("AIzaSyBQf-V2K8LgS4R2i8N6X3xdwqMWKRt8aTY")
@@ -50,31 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let status = Reach().connectionStatus()
         switch status {
-        case .Unknown, .Offline:
-            print("Not connected")
-                    
+        case .Unknown, .Offline: break
         case .Online(.WWAN):
-            print("Connected via WWAN")
             LaunchCondition()
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/treetable.php")
         case .Online(.WiFi):
-            print("Connected via WiFi")
             LaunchCondition()
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/treetable.php")
         }
-    
-
-       
-        
-        
-       
-        
-       
-        
-        
-
-        
-        // Override point for customization after application launch.
         return true
     }
 

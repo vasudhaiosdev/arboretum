@@ -11,7 +11,8 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell
 {
     @IBOutlet weak var imageview: UIImageView!
-   // var myimage = UIImage(named: "Cancel_Upload")
+
+    //Funtion that used to show the image in specific cell
     func getphoto(photo:String)
     {
         let image=NSData(contentsOfURL: NSURL(string:photo)!)

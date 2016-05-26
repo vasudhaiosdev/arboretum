@@ -13,6 +13,8 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
  
     @IBOutlet var itemimage: UIImageView!
     @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+   
+    //Used to take the photo
     @IBAction func Camera(sender: AnyObject)
     {
         let picker = UIImagePickerController()
@@ -22,6 +24,8 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         presentationController
         
     }
+    
+    //Used to browse the photo form photo libreary
     @IBAction func Uploadphoto(sender: AnyObject)
     {
         let myPickerController=UIImagePickerController()
@@ -31,33 +35,60 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
     }
     
+    //Used to reduce the image size
+    func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
+        } else {
+            newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    //Used to assign the image to itemimage
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
+
         itemimage.image=info[UIImagePickerControllerOriginalImage] as? UIImage
         unhideButton()
-        
+
           self.dismissViewControllerAnimated(true, completion: nil)
-      
     }
  
-    
-    @IBAction func SaveBtnTapped(sender: AnyObject) {
+
+    @IBAction func SaveBtnTapped(sender: AnyObject)
+    {
+        itemimage.image =     self.ResizeImage(itemimage.image!, targetSize: CGSizeMake(1000.0, 1300.0))
         myImageUploadRequest()
-        
         
     }
    
     @IBOutlet var saveBTN: UIButton!
-    
 
-    
     override func viewDidLoad()
     {
          self.navigationItem.backBarButtonItem?.title = "Back"
         hideButton()
         self.myActivityIndicator.hidden = true
         super.viewDidLoad()
-        
+
       
         // Do any additional setup after loading the view.
     }
@@ -68,10 +99,6 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     }
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
-    }
-    func sideMenuShouldOpenSideMenu() -> Bool {
-        //print("sideMenuShouldOpenSideMenu")
-        return true
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         hideSideMenuView()
@@ -93,57 +120,39 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
         
         
+        //Used to check if the device has internet connection on not
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
-            
-            print(userInfo)
-            
-        }
+            _ = notification.userInfo
+            }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
-            print("Not connected")
             dispatch_async(dispatch_get_main_queue(), {
                 let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
                 let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
-                
                 alertController.addAction(settingsAction)
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             })
-            
-            
-        case .Online(.WWAN):
-            print("Connected via WWAN")
-        case .Online(.WiFi):
-            print("Connected via WiFi2")
+        case .Online(.WWAN): break
+        case .Online(.WiFi): break
             
         }
-        
-
-        
     }
    
     
-    
+    //Functions those are used to upload the images through server
     func myImageUploadRequest()
     {
         
-    let myUrl = NSURL(string: "http://192.168.0.24/iosphotos/test.php");
-       //let myUrl = NSURL(string: "http://172.20.10.10/iosphotos/test.php");
+    let myUrl = NSURL(string: "http://csgrad10.nwmissouri.edu/MissouriArboretum/iosUploadPhp.php");
         
         let request = NSMutableURLRequest(URL:myUrl!);
         request.HTTPMethod = "POST";
@@ -173,18 +182,9 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             data, response, error in
             
             if error != nil {
-                print("error=\(error)")
                 return
             }
-            
-            // You can print out response object
-            print("******* response = \(response)")
-            
-            // Print out reponse body
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("****** response data = \(responseString!)")
-            
-
+_ = NSString(data: data!, encoding: NSUTF8StringEncoding)
             do {
                 
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? NSDictionary
@@ -199,13 +199,11 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 
                 
                 if let parseJSON = json {
-                let firstNameValue = parseJSON["firstName"] as? String
-                print("firstNameValue: \(firstNameValue)")
+                _ = parseJSON["firstName"] as? String
                 }
                 
                 
             } catch{
-                print(error)
             }
             
             if (error == nil)
@@ -239,6 +237,7 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         
     }
+    
     var filename = "image"
     
     func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
@@ -274,7 +273,12 @@ class Photo_ViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         return "Boundary-\(NSUUID().UUIDString)"
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "browseImages"){
+            let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
+            self.navigationItem.backBarButtonItem = item
+        }
+    }
     
 }
 

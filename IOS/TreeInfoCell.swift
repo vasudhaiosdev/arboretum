@@ -14,9 +14,9 @@ class TreeInfoCell: UITableViewCell {
     
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var middleLabel: UILabel!
-    
     @IBOutlet weak var rightLabel: UILabel!
     
+    //customised cell in the treeinfomation table
     func setup(cname: String, walkname: String, trailid: String)
     {
         leftLabel.text = cname
@@ -25,19 +25,13 @@ class TreeInfoCell: UITableViewCell {
         
     }
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

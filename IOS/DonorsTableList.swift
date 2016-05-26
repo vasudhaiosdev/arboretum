@@ -28,6 +28,7 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
     var sufixtwo:[NSString]=["Mr. and Mrs.","Mr.& Mrs."]
     var index:Int=0
   
+    //Used to fetch the data from json array and stored it in the donorsarray
     func dataOfJson(url: String)
     {
         let data = NSData(contentsOfURL: NSURL(string: url)!)
@@ -83,6 +84,7 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
         }
     }
     
+    //Used to search the data in donarnames as alphabetical order
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
     }
@@ -114,7 +116,7 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
         self.DonorsTable.reloadData()
     }
     
-    
+    //Dispaly the  donarnames array in table format
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
@@ -172,34 +174,25 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
          self.navigationItem.backBarButtonItem?.title = "Back"
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("networkStatusChanged:"), name: ReachabilityStatusChangedNotification, object: nil)
-        //Reach().monitorReachabilityChanges()
-        
-        
+       
+        //Used to find out if the device is connect to in the internt or not
         func networkStatusChanged(notification: NSNotification) {
-            let userInfo = notification.userInfo
-            
-            print(userInfo)
+            _ = notification.userInfo
             
         }
         let status = Reach().connectionStatus()
         switch status {
         case .Unknown, .Offline:
             NoInternet = "NONET"
-            print("Not connected")
+            //print("Not connected")
             dispatch_async(dispatch_get_main_queue(), {
                 let alertController = UIAlertController (title: "No Internet Connection", message: "Make sure your device is connected to the internet. This Application works only when internet is connected", preferredStyle: .Alert)
-                
-                
-                //  let cancelAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-                
                 let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                     let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                     if let url = settingsUrl {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
-                // alertController.addAction(cancelAction)
-                
                 alertController.addAction(settingsAction)
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -207,10 +200,8 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
             
             
         case .Online(.WWAN):
-            print("Connected via WWAN")
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/treedonortable.php")
         case .Online(.WiFi):
-            print("Connected via WiFi2")
             dataOfJson("http://csgrad10.nwmissouri.edu/arboretum/treedonortable.php")
             
         }
@@ -218,59 +209,18 @@ class DonorsTableList: UIViewController,UITableViewDataSource,UITableViewDelegat
         search.delegate=self
         DonorsTable.delegate=self
         DonorsTable.dataSource=self
-       
         super.viewDidLoad()
         hideSideMenuView()
-        
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func toggleSideMenu(sender: AnyObject) {
         toggleSideMenuView()
     }
-    
-    // MARK: - ENSideMenu Delegate
-    func sideMenuWillOpen() {
-       // print("sideMenuWillOpen")
-    }
-    
-    func sideMenuWillClose() {
-        //print("sideMenuWillClose")
-    }
-    
-    func sideMenuShouldOpenSideMenu() -> Bool {
-        //print("sideMenuShouldOpenSideMenu")
-        return true
-    }
-    
+   
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         hideSideMenuView()
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "donorMapView"){
-            let item = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
-            self.navigationItem.backBarButtonItem = item
-            let vc = segue.destinationViewController as! DonorMapViewController
-            let row = self.DonorsTable.indexPathForSelectedRow?.row
-            vc.lattitude = DonorsArray[row!].valueForKey("latitude") as! NSString
-            vc.longitude = DonorsArray[row!].valueForKey("longitude") as! NSString
-            
-        }
-    }
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
